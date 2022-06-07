@@ -1,0 +1,10 @@
+- name: System Information
+  hosts: servers
+  tasks:
+
+     - name: Gather system information for all servers. 
+       script: /export/shared-wormmoon/scripts/shell/reboot-system.sh
+       register: command_output
+
+     -  debug:
+               var: command_output.stdout_lines

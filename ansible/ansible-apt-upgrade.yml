@@ -1,0 +1,9 @@
+-  hosts: pi
+
+   tasks:
+   - name: upgrade apt
+     command: sudo apt upgrade -y
+     register: command_output
+
+   -  debug:
+             var: command_output.stdout_lines
